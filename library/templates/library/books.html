@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>books list</title>
+</head>
+<body>
+    <h2>Welcome to the e-labray</h2>
+    <p>{% lorem 1 b random %}</p>
+    <table>
+      
+        <tr>
+            <th>title</th>
+            <th>Author</th>
+            <th>Edition</th>
+            <th>ISBN</th>
+        </tr>
+        
+        
+        {% for book in books %}
+            <tr>
+                <td>{{book.title}}</td>
+                <td>{{book.auteur}}</td>
+                <td>{{book.edition}}</td> 
+                <td>{{book.ISBN}}</td> 
+            </tr>
+        {% empty %}
+            <p> No disponible book </p>
+        {% endfor %}
+       
+    </table>
+</body>
+</html>
