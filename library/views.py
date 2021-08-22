@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .models import books
+from .models import Book
+
 
 # Create your views here.
 
 def books_view(request):
-    
+    books = Book.objects.all()
 
-    # all = {'books':books}
+    context = {
+        'books': books,
+    }
 
-    return render(request, 'library/books.html', {'books':books})
+    return render(request, 'library/books.html', context)

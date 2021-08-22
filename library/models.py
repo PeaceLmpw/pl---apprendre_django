@@ -1,32 +1,14 @@
 from django.db import models
 
 # Create your models here.
-books = [
-    {
-        "title":"Le secret",
-        "auteur":"Bob Proctor",
-        "edition":"vieCoach",
-        "ISBN":"LMPW004",
-    },
+class Book(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.CharField(max_length=200)
+    ISBN = models.CharField(max_length=50, unique= True)
+    edition = models.CharField(max_length=200)
+    price = models.FloatField()
+    record_date = models.DateTimeField(auto_now_add= True,)
+    update_date = models.DateTimeField(auto_now= True)
 
-    {
-        "title":"Le temps",
-        "auteur":"Lm Vk",
-        "edition":"lovelife",
-        "ISBN":"OR004",
-    },
-
-    {
-        "title":"Cpn",
-        "auteur":"microsoppy",
-        "edition":"company",
-        "ISBN":"MSP004",
-    },
-
-    {
-        "title":"nunua-store",
-        "auteur":"microsoppy",
-        "edition":"platform",
-        "ISBN":"NUNUA004",
-    },
-]
+    def __str__(self):
+        return self.title

@@ -23,9 +23,11 @@
         {% for book in books %}
             <tr>
                 <td>{{book.title}}</td>
-                <td>{{book.auteur}}</td>
+                <td>{{book.author}}</td>
                 <td>{{book.edition}}</td> 
                 <td>{{book.ISBN}}</td> 
+                <td>{{book.record_date}}</td>
+                <td>{{book.update_date}}</td>
             </tr>
         {% empty %}
             <p> No disponible book </p>
